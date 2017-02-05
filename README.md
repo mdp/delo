@@ -21,12 +21,13 @@ to a OLED, such as the [OLED from 52Pi](http://wiki.52pi.com/index.php/0.96_OLED
 
 ### Resin.io instruction
 
-** Inside of Docker **
+**Inside of Docker**  
 `CMD modprobe i2c-dev && echo -e "Test output" | ./delo`
 
 ### Installation on Linux
 
-** Enable i2c under Raspbian Jessie **
+**Enable i2c under Raspbian Jessie**  
+
 1. Run sudo raspi-config.
 1. Use the down arrow to select 9 Advanced Options
 1. Arrow down to A7 I2C.
