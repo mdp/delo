@@ -9,7 +9,7 @@ import (
 
 	"image/color"
 
-	"github.com/mdp/pioled/monochromeoled"
+	"github.com/mdp/delo/monochromeoled"
 	"github.com/mdp/smallfont"
 	"golang.org/x/exp/io/i2c"
 )

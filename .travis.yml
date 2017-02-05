@@ -1,0 +1,5 @@
+language: go
+go:
+  - 1.7.4
+after_success:
+  test ! -z "$TRAVIS_TAG" && go get github.com/goreleaser/goreleaser && goreleaser
