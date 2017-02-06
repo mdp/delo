@@ -1,7 +1,13 @@
 ![Oled](https://cloud.githubusercontent.com/assets/2868/22624086/01516f08-eb26-11e6-9fa9-130884d50ace.jpg)
 
 # Delo
-A utility for writing text to an OLED
+
+A utility for writing text to an SSD1306 based OLED on the Raspberry Pi.
+
+I use cheap OLEDs to display relevant information about what's running on my Pi.
+Currently the easiest route is to install the Python library and write a small
+program to display text to the Pi. In my case, I just want a small, dependency
+free executable which can write text out to the OLED.
 
 #### Currently tested with
 
@@ -16,9 +22,6 @@ With the 128x64 OLED:
 `echo -e "192.168.0.124\nSome status\nAnother Line\nGoodbye World" | delo -height 64`
 
 ## Installation
-
-The goal of 'delo' is to create a binary that can quickly write text
-to a OLED, such as the [OLED from 52Pi](http://wiki.52pi.com/index.php/0.96_OLED(English))
 
 One line install and Usage (requires i2c to be enabled)
 
