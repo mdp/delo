@@ -3,6 +3,10 @@
 # Delo
 A utility for writing text to an OLED
 
+#### Currently tested with
+
+- [52pi 128x32 OLED](https://www.modmypi.com/raspberry-pi/breakout-boards/52pi/52pi-0.91-128x32-oled-screen-for-raspberry-pi)
+
 ## Example
 
 With the 128x32 OLED:  
