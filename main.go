@@ -25,19 +25,22 @@ func main() {
 		Color: color.White,
 	}
 
+	// Open the i2c device
+	// TODO: allow for customizing the address
 	d, err := monochromeoled.Open(&i2c.Devfs{Dev: "/dev/i2c-1"}, 0x3c, 128, *height)
 	if err != nil {
 		panic(err)
 	}
 	defer d.Close()
 
+	// Split the input by newline and print each to a subsequent line
 	scanner := bufio.NewScanner(os.Stdin)
 	lines, line := *height/ctx.Font.Height, 0
 	for scanner.Scan() {
 		if line >= lines {
 			break
 		}
-		message := []byte(scanner.Text()) // Println will add back the final '\n'
+		message := []byte(scanner.Text())
 		err := ctx.Draw(message[0:15], 0, line*ctx.Font.Height)
 		if err != nil {
 			fmt.Println(err)
@@ -46,10 +49,11 @@ func main() {
 		line++
 	}
 
-	// clear the display before putting on anything
+	// Clear the display
 	if err := d.Clear(); err != nil {
 		panic(err)
 	}
+	// Set the display image to our text
 	if err := d.SetImage(0, 0, img); err != nil {
 		panic(err)
 	}
