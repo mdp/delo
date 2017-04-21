@@ -1,5 +1,5 @@
 build:
-  binary_name: delo
+  binary: delo
   goos:
     - linux
   goarch:
